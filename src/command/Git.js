@@ -8,7 +8,7 @@ class GitSpec {
         stdio: 'inherit'
     })
     printMessage([chalk.bold.green(`push Success`)],{color:'green',borderColor:'green'})  
-    console.log(argv)
+    console.log(argv) 
  }
 }
 Object.freeze(GitSpec)
