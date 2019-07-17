@@ -7,7 +7,7 @@ const printMessage = require('print-message')
 class UpdateSpec {
     static run(argv) {
         childProcess.execSync('sudo npm install PeteTop/global_script -g',{stdio: 'inherit'})
-        printMessage([`Update Successful`],{color:'green'})
+        printMessage([`Update Successful`],{color:'red'})
         printMessage([`version: ${packageJson.version}`],{color:'yellow'})
         printMessage([`Path:${rootPath}`],{color:'yellow'})
     }
