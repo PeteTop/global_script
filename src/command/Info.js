@@ -18,7 +18,7 @@ class InfoSpec {
             printMessage([`version: ${version}`], {
                 color: 'green'
             })
-            printMessage([`Path:${rootPath}`],{color:'green'})
+            printMessage([`Path:${rootPath}`],{color:'green',borderColor:'green'})
         }
     }
     static system(val) {
