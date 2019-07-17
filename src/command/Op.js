@@ -4,7 +4,7 @@ const os = require('os')
 const printMessage = require('print-message')
 console.log(path.resolve(os.homedir(), 'hfs_config/console.json'))
 const {
-    console
+    cons
 } = require(path.resolve(os.homedir(), 'hfs_config/console.json'))
 
 class OpenSpec {
@@ -13,8 +13,8 @@ class OpenSpec {
         let notMatchAry = []
         for (let key = 1; key < argv._.length; key++) {
             const ysKey = argv._[key]
-            if (ys[ysKey]) {
-                cmd += `${ys[ysKey]} `
+            if (cons[ysKey]) {
+                cmd += `${cons[ysKey]} `
             } else {
                 notMatchAry.push(ysKey)
             }
