@@ -1,6 +1,7 @@
 const childProcess = require('child_process')
 const chalk = require('chalk')
 const printMessage = require('print-message')
+const Update = require('./Update')
 class GitSpec {
  static run (argv) {
     childProcess.execSync(`git add . && git commit -m 'PeteTop ${new Date().toLocaleString()}' && git push`,{
@@ -8,7 +9,9 @@ class GitSpec {
         stdio: 'inherit'
     })
     printMessage([chalk.bold.green(`push Success`)],{color:'green',borderColor:'green'})  
-    console.log(argv) 
+    if (argv.update) {
+        Update.run()
+    }
  }
 }
 Object.freeze(GitSpec)
