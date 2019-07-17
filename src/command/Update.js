@@ -11,7 +11,7 @@ class UpdateSpec {
     static run(argv) {
         childProcess.execSync('sudo npm install PeteTop/global_script -g',{stdio: 'inherit'})
         printMessage([`Update Successful`],{color:'green',borderColor:'green'})
-        printMessage([`version: ${version}`],{color:'green',borderColor:'green'})
+        printMessage([`version: ${require('../../package.json').version}`],{color:'green',borderColor:'green'})
         printMessage([`Path:${rootPath}`],{color:'green',borderColor:'green'})
     }
 }
