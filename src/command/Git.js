@@ -7,7 +7,7 @@ class GitSpec {
         encoding:'utf-8',
         stdio: 'inherit'
     })
-    printMessage([chalk.bold.green(`push Success`)],{color:'green',borderColor:'green'}) 
+    printMessage([chalk.bold.green(`push Success`)],{color:'green',borderColor:'green'})  
     console.log()
  }
 }
