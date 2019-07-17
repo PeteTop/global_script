@@ -2,10 +2,10 @@ const childProcess = require('child_process')
 const path = require('path')
 const os = require('os')
 const printMessage = require('print-message')
-console.log(path.resolve(os.homedir(), 'account.json'))
+console.log(path.resolve(os.homedir(), 'hfs_config/console.json'))
 const {
-    ys
-} = require(path.resolve(os.homedir(), 'account.json'))
+    console
+} = require(path.resolve(os.homedir(), 'hfs_config/console.json'))
 
 class OpenSpec {
     static run(argv) {
