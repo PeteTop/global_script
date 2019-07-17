@@ -1,8 +1,4 @@
 const childProcess = require('child_process')
-// const packageJson = require('../../package.json')
-// const {
-//     version
-// } = packageJson
 const chalk = require('chalk')
 const path = require('path')
 const rootPath = path.resolve(__dirname, '../../')
