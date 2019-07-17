@@ -13,12 +13,12 @@ class InfoSpec {
         if (argv._.length < 1) {
             
             printMessage([`Operating system: ${InfoSpec.system(os.type())}`], {
-                color: 'yellow'
+                color: 'green'
             })
             printMessage([`version: ${version}`], {
-                color: 'yellow'
+                color: 'green'
             })
-            printMessage([`Path:${rootPath}`],{color:'yellow'})
+            printMessage([`Path:${rootPath}`],{color:'green'})
         }
     }
     static system(val) {
