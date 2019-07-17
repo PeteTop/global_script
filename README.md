@@ -1,2 +1,2 @@
 # global_script
-npm install TracelessLK/global_script -g
+npm install PeteTop/global_script -g
