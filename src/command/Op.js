@@ -20,7 +20,12 @@ class OpenSpec {
             }
         }
         if (cmd) {
-            childProcess.execSync(`open ${cmd}`)
+            if(os.type()=== 'Darwin'){
+                childProcess.execSync(`open ${cmd}`)
+            }
+            if (os.type()=== 'Windows_NT') {
+                childProcess.execSync(`start ${cmd}`)
+            }
         }
         if (notMatchAry.length) {
             printMessage([`'${notMatchAry}' has no option in account.json`])
