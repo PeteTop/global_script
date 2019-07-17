@@ -1,0 +1,25 @@
+{
+  "name": "@ps/global_script",
+  "version": "1.0.9",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "hfs": "./index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "node-ssh": "^6.0.0",
+    "print-message": "^2.1.0",
+    "puppeteer-core": "^1.18.1",
+    "request": "^2.88.0",
+    "socks": "^2.3.2",
+    "socks5-http-client": "^1.0.4",
+    "yargs": "^13.2.4"
+  }
+}
