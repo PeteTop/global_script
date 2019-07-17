@@ -13,10 +13,10 @@ class InfoSpec {
         if (argv._.length < 1) {
             
             printMessage([`Operating system: ${InfoSpec.system(os.type())}`], {
-                color: 'green'
+                color: 'green',borderColor:'green'
             })
             printMessage([`version: ${version}`], {
-                color: 'green'
+                color: 'green',borderColor:'green'
             })
             printMessage([`Path:${rootPath}`],{color:'green',borderColor:'green'})
         }
