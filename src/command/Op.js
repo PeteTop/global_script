@@ -7,9 +7,7 @@ const {
     warn
 } = require('../printing_style/Print')
 console.log(path.resolve(os.homedir(), 'hfs_config/console.json'))
-const {
-    cons
-} = require(path.resolve(os.homedir(), 'hfs_config/console.json'))
+const cons = require(path.resolve(os.homedir(), 'hfs_config/console.json'))
 
 class OpenSpec {
     static run(argv) {
