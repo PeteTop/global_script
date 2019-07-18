@@ -14,11 +14,10 @@ const {
 
 class InfoSpec {
     static run(argv) {
-        if (argv._.length < 1) {
+        console.log(argv)
             info([`Operating system: ${InfoSpec.system(os.type())}`])
             info([`version: ${version}`])
             if(os.type() === 'Darwin')info([`Path:${rootPath}`])
-        }
     }
     static system(val) {
         switch (val) {
