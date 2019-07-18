@@ -9,7 +9,7 @@ class GitSpec {
         encoding:'utf-8',
         stdio: 'inherit' 
     })
-    info([chalk.bold.green(`push Success`)])  
+    info([chalk.bold.green(`push Success`)])   
     if (argv.update) { 
         Update.run()
     }
