@@ -51,6 +51,6 @@ function file() {
         } 
     } else {
         fs.mkdirSync(path.resolve(os.homedir(), 'hfs_config'))
-        
+        file()
     }
 }
