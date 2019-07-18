@@ -18,7 +18,7 @@ const os = require('os')
 start()
 
 function start() {
-    file()
+    if (!fs.existsSync(path.resolve(os.homedir(), 'hfs_config')))file()
     let cmd = argvAry[0]
     const specAry = fs.readdirSync(specFolder).map((item) => {
         return item.split('.')[0]
