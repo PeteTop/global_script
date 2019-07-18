@@ -10,7 +10,7 @@ class UpdateSpec {
         if(os.type()=== 'Windows_NT')childProcess.execSync('npm install PeteTop/global_script -g',{stdio: 'inherit'})
         info([`Update Successful`]) 
         info([`version: ${require('../../package.json').version}`])
-        info([`Path:${rootPath}`])
+        if(os.type()=== 'Darwin')info([`Path:${rootPath}`])
     }
 }
 

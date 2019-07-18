@@ -17,7 +17,7 @@ class InfoSpec {
         if (argv._.length < 1) {
             info([`Operating system: ${InfoSpec.system(os.type())}`])
             info([`version: ${version}`])
-            info([`Path:${rootPath}`])
+            if(os.type() === 'Darwin')info([`Path:${rootPath}`])
         }
     }
     static system(val) {
