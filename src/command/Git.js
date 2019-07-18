@@ -4,7 +4,7 @@ const {info,error,warn} = require('../printing_style/Print')
 const Update = require('./Update')
 class GitSpec {
  static run (argv) {
-    childProcess.execSync(`git add . && git commit -m 'PeteTop ${new Date().toLocaleString()}' && git push`,{
+    childProcess.execSync(`git add . && git commit -m '${os.hostname()} ${new Date().toLocaleString()}' && git push`,{
         encoding:'utf-8',
         stdio: 'inherit'
     })
