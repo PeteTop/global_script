@@ -5,7 +5,7 @@ const {
     info,
     error,
     warn
-} = require('../printing_style/Print')
+} = require('@hfs/print')
 console.log(path.resolve(os.homedir(), 'hfs_config/console.json'))
 const cons = require(path.resolve(os.homedir(), 'hfs_config/console.json'))
 

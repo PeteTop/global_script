@@ -7,7 +7,7 @@ const {
     info,
     error,
     warn
-} = require('../printing_style/Print')
+} = require('@hfs/print')
 const {
     version
 } = packageJson

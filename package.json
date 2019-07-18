@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@hfs/print": "github:PeteTop/Print",
     "chalk": "^2.4.2",
     "node-ssh": "^6.0.0",
     "print-message": "^2.1.0",

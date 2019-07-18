@@ -2,7 +2,7 @@ const childProcess = require('child_process')
 const chalk = require('chalk')
 const path = require('path')
 const rootPath = path.resolve(__dirname, '../../')
-const {info,error,warn} = require('../printing_style/Print')
+const {info,error,warn} = require('@hfs/print')
 const os = require('os')
 class UpdateSpec {
     static run(argv) {

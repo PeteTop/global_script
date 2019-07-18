@@ -4,7 +4,7 @@ const {
     info,
     error,
     warn
-} = require('../printing_style/Print')
+} = require('@hfs/print')
 const os = require('os')
 const Update = require('./Update')
 class GitSpec {
