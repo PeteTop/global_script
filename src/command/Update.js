@@ -15,4 +15,4 @@ class UpdateSpec {
 }
 
 Object.freeze(UpdateSpec)
-module.exports = UpdateSpec
+module.exports = UpdateSpec 
