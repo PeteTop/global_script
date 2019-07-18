@@ -4,7 +4,7 @@ const {
     info,
     error,
     warn
-} = require('./src/printing_style/Print')
+} = require('@hfs/print')
 const {
     _: argvAry
 } = yargs
