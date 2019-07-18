@@ -1,6 +1,10 @@
 const node_ssh = require('node-ssh')
 const ssh = new node_ssh()
-
+const path = require('path')
+const os = require('os')
+const {
+    cons
+} = require(path.resolve(os.homedir(), 'hfs_config/console.json'))
 const cmd = 'jps'
 class RestartSpec {
     static run(argv) {
