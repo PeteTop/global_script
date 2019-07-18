@@ -1,4 +1,5 @@
 #! /usr/bin/env node
+
 const yargs = require('yargs').argv
 const {
     info,
@@ -12,10 +13,12 @@ const path = require('path')
 const fs = require('fs')
 const rootPath = path.resolve(__dirname, './')
 const specFolder = path.resolve(rootPath, 'src/command')
+const os = require('os')
 
 start()
 
 function start() {
+    file()
     let cmd = argvAry[0]
     const specAry = fs.readdirSync(specFolder).map((item) => {
         return item.split('.')[0]
@@ -31,10 +34,23 @@ function start() {
     }
     if (specFile) {
         const spec = require(path.resolve(rootPath, 'src/command', specFile))
-        const {run} = spec
+        const {
+            run
+        } = spec
         run(yargs)
-    }else {
+    } else {
         warn([`command '${argvAry}' not founded`])
         warn([`Available commands ${specAry}`])
+    }
+}
+
+function file() {
+    if (fs.existsSync(path.resolve(os.homedir(), 'hfs_config'))) {
+        if (!fs.existsSync(path.resolve(os.homedir(), 'hfs_config/console.json'))) {
+            fs.writeFileSync(path.resolve(os.homedir(), 'hfs_config/console.json'), JSON.stringify({"baidu":"https://www.baidu.com"}));
+        } 
+    } else {
+        fs.mkdirSync(path.resolve(os.homedir(), 'hfs_config'))
+        
     }
 }
