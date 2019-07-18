@@ -7,7 +7,7 @@ class GitSpec {
  static run (argv) {
     childProcess.execSync(`git add . && git commit -m '${os.hostname()} ${new Date().toLocaleString()}' && git push`,{
         encoding:'utf-8',
-        stdio: 'inherit'
+        stdio: 'inherit' 
     })
     info([chalk.bold.green(`push Success`)])  
     if (argv.update) { 
