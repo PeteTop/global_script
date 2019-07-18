@@ -1,6 +1,7 @@
 const childProcess = require('child_process')
 const chalk = require('chalk')
 const {info,error,warn} = require('../printing_style/Print')
+const os = require('os')
 const Update = require('./Update')
 class GitSpec {
  static run (argv) {
@@ -9,7 +10,7 @@ class GitSpec {
         stdio: 'inherit'
     })
     info([chalk.bold.green(`push Success`)])  
-    if (argv.update) {
+    if (argv.update) { 
         Update.run()
     }
  }
