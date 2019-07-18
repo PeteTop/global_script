@@ -14,17 +14,15 @@ class OpenSpec {
         for (let key = 1; key < argv._.length; key++) {
             const ysKey = argv._[key]
             if (cons[ysKey]) {
-                cmd += `${cons[ysKey]} `
+                    if(os.type()=== 'Darwin'){
+                        childProcess.execSync(`open ${cons[ysKey]}`)
+                    }
+                    if (os.type()=== 'Windows_NT') {
+                        childProcess.execSync(`start ${cons[ysKey]}`)
+                    }
+                //cmd += `${cons[ysKey]} `
             } else {
                 notMatchAry.push(ysKey)
-            }
-        }
-        if (cmd) {
-            if(os.type()=== 'Darwin'){
-                childProcess.execSync(`open ${cmd}`)
-            }
-            if (os.type()=== 'Windows_NT') {
-                childProcess.execSync(`start ${cmd}`)
             }
         }
         if (notMatchAry.length) {
