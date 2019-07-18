@@ -1,7 +1,11 @@
 const childProcess = require('child_process')
 const path = require('path')
 const os = require('os')
-const printMessage = require('print-message')
+const {
+    info,
+    error,
+    warn
+} = require('../printing_style/Print')
 console.log(path.resolve(os.homedir(), 'hfs_config/console.json'))
 const {
     cons
@@ -9,24 +13,22 @@ const {
 
 class OpenSpec {
     static run(argv) {
-        let cmd = ''
         let notMatchAry = []
         for (let key = 1; key < argv._.length; key++) {
             const ysKey = argv._[key]
             if (cons[ysKey]) {
-                    if(os.type()=== 'Darwin'){
-                        childProcess.execSync(`open ${cons[ysKey]}`)
-                    }
-                    if (os.type()=== 'Windows_NT') {
-                        childProcess.execSync(`start ${cons[ysKey]}`)
-                    }
-                //cmd += `${cons[ysKey]} `
+                if (os.type() === 'Darwin') {
+                    childProcess.execSync(`open ${cons[ysKey]}`)
+                }
+                if (os.type() === 'Windows_NT') {
+                    childProcess.execSync(`start ${cons[ysKey]}`)
+                }
             } else {
                 notMatchAry.push(ysKey)
             }
         }
         if (notMatchAry.length) {
-            printMessage([`'${notMatchAry}' has no option in account.json`])
+            error([`'${notMatchAry}' has no option in account.json`])
         }
     }
 }

@@ -1,9 +1,13 @@
 const packageJson = require('../../package.json')
-const printMessage = require('print-message')
 const path = require('path')
 const rootPath = path.resolve(__dirname, '../../')
 const os = require('os')
-
+console.log(os.hostname())
+const {
+    info,
+    error,
+    warn
+} = require('../printing_style/Print')
 const {
     version
 } = packageJson
@@ -11,14 +15,9 @@ const {
 class InfoSpec {
     static run(argv) {
         if (argv._.length < 1) {
-            
-            printMessage([`Operating system: ${InfoSpec.system(os.type())}`], {
-                color: 'green',borderColor:'green'
-            })
-            printMessage([`version: ${version}`], {
-                color: 'green',borderColor:'green'
-            })
-            printMessage([`Path:${rootPath}`],{color:'green',borderColor:'green'})
+            info([`Operating system: ${InfoSpec.system(os.type())}`])
+            info([`version: ${version}`])
+            info([`Path:${rootPath}`])
         }
     }
     static system(val) {

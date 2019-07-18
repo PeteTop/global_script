@@ -1,7 +1,10 @@
 #! /usr/bin/env node
 const yargs = require('yargs').argv
-const chalk = require('chalk')
-const printMessage = require('print-message')
+const {
+    info,
+    error,
+    warn
+} = require('./src/printing_style/Print')
 const {
     _: argvAry
 } = yargs
@@ -31,7 +34,7 @@ function start() {
         const {run} = spec
         run(yargs)
     }else {
-        printMessage([`command ${chalk.red(argvAry)} not founded`])
-        printMessage([`Available commands ${chalk.green(specAry)}`])
+        warn([`command '${argvAry}' not founded`])
+        warn([`Available commands ${specAry}`])
     }
 }
