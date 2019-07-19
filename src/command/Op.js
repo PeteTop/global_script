@@ -12,6 +12,7 @@ const cons = require(path.resolve(os.homedir(), 'hfs_config/console.json'))
 class OpenSpec {
     static run(argv) {
         let notMatchAry = []
+        if (argv.json) childProcess.execSync(`code ${path.resolve(os.homedir(), 'hfs_config/console.json')}`)
         for (let key = 1; key < argv._.length; key++) {
             const ysKey = argv._[key]
             if (cons[ysKey]) {
