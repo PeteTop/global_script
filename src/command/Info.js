@@ -2,7 +2,7 @@ const packageJson = require('../../package.json')
 const path = require('path')
 const rootPath = path.resolve(__dirname, '../../')
 const os = require('os')
-console.log(path.resolve())
+
 const {
     info,
     error,
