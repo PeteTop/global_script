@@ -12,16 +12,11 @@ const cons = require(path.resolve(os.homedir(), 'hfs_config/console.json'))
 class OpenSpec {
     static run(argv) {
         let notMatchAry = []
-        if (argv.json) childProcess.execSync(`code ${path.resolve(os.homedir(), 'hfs_config/console.json')}`)
+        if (argv.json) childProcess.execSync(`${os.type() === 'Darwin'? 'open':'start'} ${path.resolve(os.homedir(), 'hfs_config/console.json')}`)
         for (let key = 1; key < argv._.length; key++) {
             const ysKey = argv._[key]
             if (cons[ysKey]) {
-                if (os.type() === 'Darwin') {
-                    childProcess.execSync(`open ${cons[ysKey]}`)
-                }
-                if (os.type() === 'Windows_NT') {
-                    childProcess.execSync(`start ${cons[ysKey]}`)
-                }
+                childProcess.execSync(`${os.type() === 'Darwin' ? 'open':'start'} ${cons[ysKey]}`)
             } else {
                 notMatchAry.push(ysKey)
             }
