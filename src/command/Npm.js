@@ -1,17 +1,26 @@
 const childProcess = require('child_process')
+const path = require('path')
+const {
+    taobao,
+    npmjs,
+    getNpm
+} = require(path.resolve('config/index.js'))
+
 const {
     execSync
 } = childProcess
-const taobao = 'npm config set registry https://registry.npm.taobao.org && npm config get registry'
-const npmjs = 'npm config set registry http://registry.npmjs.org && npm config get registry'
 class NpmSpec {
     static run(argv) {
-        if (argv.t || argv.n) {
-            execSync(`${argv.t?taobao:npmjs}`, {
+        const {
+            t,
+            n
+        } = argv
+        if (t || n) {
+            execSync(`${t?taobao:npmjs}`, {
                 stdio: 'inherit'
             })
         } else {
-            execSync(`npm config get registry`, {
+            execSync(`${getNpm}`, {
                 stdio: 'inherit'
             })
         }

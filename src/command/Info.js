@@ -14,21 +14,9 @@ const {
 
 class InfoSpec {
     static run(argv) {
-            info([`Operating system: ${InfoSpec.system(os.type())}`])
+            info([`Operating system: ${os.type() === 'Darwin' ? 'macOS' : 'Windows'}`])
             info([`version: ${version}`])
             if(os.type() === 'Darwin')info([`Path:${rootPath}`])
-    }
-    static system(val) {
-        switch (val) {
-            case 'Darwin':
-                return "macOS"
-                break;
-            case 'Windows_NT':
-                return "Windows"
-                break;
-            default:
-                break;
-        }
     }
 }
 
