@@ -18,7 +18,7 @@ const os = require('os')
 start()
 
 function start() {
-    if (!fs.existsSync(path.resolve(os.homedir(), 'hfs_config')))file()
+    if (!fs.existsSync(path.resolve(os.homedir(), 'hfs_config')))fileCreation()
     let cmd = argvAry[0]
     const specAry = fs.readdirSync(specFolder).map((item) => {
         return item.split('.')[0]
@@ -44,13 +44,13 @@ function start() {
     }
 }
 
-function file() {
+function fileCreation() {
     if (fs.existsSync(path.resolve(os.homedir(), 'hfs_config'))) {
         if (!fs.existsSync(path.resolve(os.homedir(), 'hfs_config/console.json'))) {
-            fs.writeFileSync(path.resolve(os.homedir(), 'hfs_config/console.json'), JSON.stringify({"baidu":"https://www.baidu.com"}));
+            fs.writeFileSync(path.resolve(os.homedir(), 'hfs_config/console.json'), JSON.stringify({"git":"https://github.com/"}));
         } 
     } else {
         fs.mkdirSync(path.resolve(os.homedir(), 'hfs_config'))
-        file()
+        fileCreation()
     }
 }
