@@ -7,7 +7,6 @@ const {
     error,
     warn
 } = require('@hfs/print')
-console.log(path.resolve(os.homedir(), 'hfs_config/console.json'))
 const cons = require(path.resolve(os.homedir(), 'hfs_config/console.json'))
 
 class OpenSpec {
