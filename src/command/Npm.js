@@ -20,7 +20,7 @@ class NpmSpec {
                 stdio: 'inherit'
             })
         } else {
-            execSync(`${getNpm}`, {
+            execSync(`${getNpm}`, { 
                 stdio: 'inherit'
             })
         }
