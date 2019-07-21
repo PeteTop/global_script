@@ -4,7 +4,7 @@ const {
     taobao,
     npmjs,
     getNpm
-} = require(path.resolve('config/index.js'))
+} = require('../../config/index.js')
 
 const {
     execSync
