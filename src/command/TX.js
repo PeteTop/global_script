@@ -90,7 +90,6 @@ class TXSpec {
                     arr.sort((a, b) => {
                         return new Date(a.date) - new Date(b.date)
                     })
-                    console.log(arr)
                     let ms = parseInt(data.replace(/ /g, ''))
                     for (let i = 0; i < arr.length; i++) {
                         ms = ms - parseFloat(arr[i].cost)
