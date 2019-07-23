@@ -4,7 +4,7 @@ const path = require('path')
 const os = require('os')
 const {
     cons
-} = require(path.resolve(os.homedir(), 'hfs_config/console.json'))
+} = require(path.resolve(os.homedir(), '.hfs/console.json'))
 const cmd = 'jps'
 class RestartSpec {
     static run(argv) {

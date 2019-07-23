@@ -4,7 +4,7 @@ const path = require('path')
 const os = require('os')
 const {
     Tencent
-} = require(path.resolve(os.homedir(), 'hfs_config/account.json'))
+} = require(path.resolve(os.homedir(), '.hfs/account.json'))
 class TXSpec {
     static async run() {
         const browser = await puppeteer.launch({
