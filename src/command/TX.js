@@ -10,7 +10,7 @@ class TXSpec {
         const browser = await puppeteer.launch({
             ///Users/admin/Downloads/Chrome/chrome-mac/chrome-mac/Chromium.app/Contents/MacOS/Chromium
             executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
-            headless: true, //是否打开浏览器窗口
+            headless: false, //是否打开浏览器窗口
             timeout: 60000,
             ignoreHTTPSErrors: true //如果是访问https页面 此属性会忽略https错误
         });
@@ -101,7 +101,8 @@ class TXSpec {
                         }
                     }
                 }
-                console.log(`账户:${chalk.blue(userName.substr(userName.indexOf('@')-4,4))}  可用余额:${chalk.green(data.replace(/ /g,''))}  云服务器:${chalk.blue(num[0].count)}台  ${num[1].time}:${chalk.blue(num[1].count)}台  续费后可用余额:${balance>200?chalk.green(balance + '元'):chalk.red(balance + '元')} 余额到期日:${chalk.red(ps?ps:'')}`)
+                //console.log(`账户:${chalk.blue(userName.substr(userName.indexOf('@')-4,4))}  可用余额:${chalk.green(data.replace(/ /g,''))}  云服务器:${chalk.blue(num[0].count)}台  ${num[1].time}:${chalk.blue(num[1].count)}台  续费后可用余额:${balance>200?chalk.green(balance + '元'):chalk.red(balance + '元')} 代理到期日:${chalk.red(ps?ps:'')}`)
+                console.log(`账户:${chalk.blue(userName.substr(userName.indexOf('@')-4,4))}  可用余额:${chalk.green(data.replace(/ /g,''))}  云服务器:${chalk.blue(num[0].count)}台 代理到期日:${chalk.red(ps?ps:'')}`)
                 await page.close()
             }
             await browser.close(); //关闭窗口
