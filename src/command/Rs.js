@@ -15,7 +15,9 @@ class RestartUpSpec {
         const item = argv._[1]
         const option = ['r','s']
        if(option.indexOf(item) !== -1 && os.type() === 'Windows_NT'){
-         execSync(`shutdown -${item} -t 5`)
+         execSync(`shutdown -${item} -t 0`)
+       }else {
+           console.log('windows中生效')
        }
         
     }
