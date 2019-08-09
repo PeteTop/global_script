@@ -1,6 +1,6 @@
 {
   "name": "@hfs/global_script",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "",
   "main": "index.js",
   "scripts": {
