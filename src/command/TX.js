@@ -11,7 +11,7 @@ class TXSpec {
         const browser = await puppeteer.launch({
             ///Users/admin/Downloads/Chrome/chrome-mac/chrome-mac/Chromium.app/Contents/MacOS/Chromium
             executablePath: chrome,
-            headless: false, //是否打开浏览器窗口
+            headless: true, //是否打开浏览器窗口
             timeout: 60000,
             ignoreHTTPSErrors: true //如果是访问https页面 此属性会忽略https错误
         });
@@ -97,7 +97,7 @@ class TXSpec {
                     let ms = parseInt(data.replace(/ /g, ''))
                     for (let i = 0; i < arr.length; i++) {
                         ms = ms - parseFloat(arr[i].cost)
-                        if (ms < 0) {
+                        if (ms < 20) {
                             ps = `${arr[i].date} 地域:${arr[i].region}`
                             //(`余额：${ps}`)
 
