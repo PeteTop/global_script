@@ -10,7 +10,7 @@ class TXSpec {
         const browser = await puppeteer.launch({
             ///Users/admin/Downloads/Chrome/chrome-mac/chrome-mac/Chromium.app/Contents/MacOS/Chromium
             executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
-            headless: false, //是否打开浏览器窗口
+            headless: true, //是否打开浏览器窗口
             timeout: 60000,
             ignoreHTTPSErrors: true //如果是访问https页面 此属性会忽略https错误
         });
@@ -69,12 +69,15 @@ class TXSpec {
                 await page.waitFor(1000)
                 const fulter = await page.$$('#appArea > div > div:nth-child(3) > div.main-head > div.renewals-search-type.J-renewal-filter > div.renewals-search-type-item.J-region-filter > div > a')
                 let arr = []
+                let txarr = []
                 let ps = ''
                 if (fulter.length > 0) {
                     for (let i = 1; i <= fulter.length; i++) {
                         await page.click(`#appArea > div > div:nth-child(3) > div.main-head > div.renewals-search-type.J-renewal-filter > div.renewals-search-type-item.J-region-filter > div > a:nth-child(${i})`)
                         if (i === 1) await page.click('#appArea > div > div:nth-child(3) > div.main-head > div.new-action-panel > div > ul > li:nth-child(2) > a')
                         await page.waitFor(6000)
+                        const txNum = await page.$eval('#appArea > div > div:nth-child(3) > div.main-head > div.new-action-panel > div > ul > li:nth-child(2) > a',a => a.innerText)
+                        txarr.push(parseInt(txNum.split('(')[1].split(')')[0]))
                         const tx = await page.$$eval('#appArea > div > div:nth-child(3) > div.main-body > div:nth-child(2) > div > div.tc-15-table-panel > div.tc-15-table-fixed-body > table > tbody > tr.item-row', div => {
                             return div.map((item) => {
                                 return {
@@ -101,8 +104,9 @@ class TXSpec {
                         }
                     }
                 }
+                
                 //console.log(`账户:${chalk.blue(userName.substr(userName.indexOf('@')-4,4))}  可用余额:${chalk.green(data.replace(/ /g,''))}  云服务器:${chalk.blue(num[0].count)}台  ${num[1].time}:${chalk.blue(num[1].count)}台  续费后可用余额:${balance>200?chalk.green(balance + '元'):chalk.red(balance + '元')} 代理到期日:${chalk.red(ps?ps:'')}`)
-                console.log(`账户:${chalk.blue(userName.substr(userName.indexOf('@')-4,4))}  可用余额:${chalk.green(data.replace(/ /g,''))}  云服务器:${chalk.blue(num[0].count)}台 代理到期日:${chalk.red(ps?ps:'')}`)
+                console.log(`账户:${chalk.blue(userName.substr(userName.indexOf('@')-4,4))}  可用余额:${chalk.green(data.replace(/ /g,''))}  云服务器:${chalk.blue(eval(txarr.join("+")) )}台 代理到期日:${chalk.red(ps?ps:'')}`)
                 await page.close()
             }
             await browser.close(); //关闭窗口
