@@ -12,7 +12,7 @@ class RestartSpec {
             host: argv.ip,
             username: 'root',
             port: 22,
-            password: argv.pwd
+            password: argv.pwd  
         }).then(async () => {
             let ary = (await RestartSpec.startCmd(cmd)).split('\n')
             ary.forEach(element => {

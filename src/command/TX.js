@@ -10,7 +10,7 @@ class TXSpec {
         let chrome = os.type() === 'Darwin'?'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome':'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe'
         const browser = await puppeteer.launch({
             ///Users/admin/Downloads/Chrome/chrome-mac/chrome-mac/Chromium.app/Contents/MacOS/Chromium
-            executablePath: chrome,
+            executablePath: chrome, 
             headless: true, //是否打开浏览器窗口
             timeout: 60000,
             ignoreHTTPSErrors: true //如果是访问https页面 此属性会忽略https错误
