@@ -3,7 +3,7 @@ const sr = require('screenres');//跨平台屏幕分辨率模块和CLI工具
 const chalk = require('chalk')
 const path = require('path')
 const os = require('os')
-const {
+const { 
     cos
 } = require('../../config')
 class TonsoleSpec {
