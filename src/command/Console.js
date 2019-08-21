@@ -13,7 +13,10 @@ class TonsoleSpec {
             executablePath: chrome, 
             headless: false, //是否打开浏览器窗口
             timeout: 60000,
-            ignoreHTTPSErrors: true //如果是访问https页面 此属性会忽略https错误
+            ignoreHTTPSErrors: true ,//如果是访问https页面 此属性会忽略https错误
+            args: [
+                '--window-size=1600,1000'
+              ]
         });
         try {
             cos.forEach(async(item)=>{
