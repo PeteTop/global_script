@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer-core');
+const sr = require('screenres');//跨平台屏幕分辨率模块和CLI工具
 const chalk = require('chalk')
 const path = require('path')
 const os = require('os')
@@ -20,8 +21,8 @@ class TonsoleSpec {
                 const page = await browser.newPage() //官网写法：一打开浏览器会打开两个tab，第二个才是你正在操作的tab
                 //const page = (await browser.pages())[0]; //这是我的写法，只有一个tab
                 await page.setViewport({
-                  width: 1680,
-                  height: 1024
+                  width: sr.get()[0],
+                  height: sr.get()[1]
                 });
                 await page.goto(item.url);
                 await page.waitFor('#_e_9');

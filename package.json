@@ -19,6 +19,7 @@
     "print-message": "^2.1.0",
     "puppeteer-core": "^1.18.1",
     "request": "^2.88.0",
+    "screenres": "^2.0.1",
     "socks": "^2.3.2",
     "socks5-http-client": "^1.0.4",
     "yargs": "^13.2.4"
