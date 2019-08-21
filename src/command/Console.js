@@ -15,7 +15,8 @@ class TonsoleSpec {
             timeout: 60000,
             ignoreHTTPSErrors: true ,//如果是访问https页面 此属性会忽略https错误
             args: [
-                '--window-size=1600,1000'
+                //'--window-size=1600,1000'
+                '--start-fullscreen'
               ]
         });
         try {
