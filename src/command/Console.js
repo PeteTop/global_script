@@ -16,16 +16,15 @@ class TonsoleSpec {
             ignoreHTTPSErrors: true ,//如果是访问https页面 此属性会忽略https错误
             args: [
                 //'--window-size=1600,1000'
-                //'--start-fullscreen'
-                '--start-maximized'
+                '--start-maximized'//都启动浏览器最大化
               ]
         });
         try {
             cos.forEach(async(item)=>{
-                const page = await browser.newPage() //官网写法：一打开浏览器会打开两个tab，第二个才是你正在操作的tab
+                const page = await browser.newPage() //官网写法： 一打开浏览器会打开两个tab，第二个才是你正在操作的tab
                 //const page = (await browser.pages())[0]; //这是我的写法，只有一个tab
                 await page.setViewport({
-                  width: 1600,
+                  width: 1260,
                   height: 1000
                 });
                 await page.goto(item.url);
