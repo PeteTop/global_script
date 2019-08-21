@@ -1,5 +1,4 @@
 const puppeteer = require('puppeteer-core');
-//const sr = require('screenres');//跨平台屏幕分辨率模块和CLI工具
 const chalk = require('chalk')
 const path = require('path')
 const os = require('os')
@@ -36,7 +35,7 @@ class TonsoleSpec {
                 await page.click('#_e_12 > table > tbody > tr:nth-child(2) > td.btn-push-n-center')
             })
         } catch (error) {
-            console.log(error)
+            //console.log(error)
             await browser.close(); //关闭窗口
             TonsoleSpec.run()
         }

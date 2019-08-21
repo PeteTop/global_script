@@ -17,7 +17,7 @@
     "chalk": "^2.4.2",
     "node-ssh": "^6.0.0",
     "print-message": "^2.1.0",
-    "puppeteer-core": "^1.18.1",
+    "puppeteer-core": "^1.19.0",
     "request": "^2.88.0",
     "socks": "^2.3.2",
     "socks5-http-client": "^1.0.4",
