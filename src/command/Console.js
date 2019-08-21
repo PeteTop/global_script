@@ -16,7 +16,8 @@ class TonsoleSpec {
             ignoreHTTPSErrors: true ,//如果是访问https页面 此属性会忽略https错误
             args: [
                 //'--window-size=1600,1000'
-                '--start-fullscreen'
+                //'--start-fullscreen'
+                '--start-maximized'
               ]
         });
         try {
