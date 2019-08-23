@@ -6,7 +6,7 @@ const os = require('os')
 const { 
     cos
 } = require('../../config')
-class TonsoleSpec {
+class ConsoleSpec {
     static async run() {
         let chrome = os.type() === 'Darwin'?'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome':'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe'
         const browser = await puppeteer.launch({
@@ -49,10 +49,10 @@ class TonsoleSpec {
         } catch (error) {
             //console.log(error)
             await browser.close(); //关闭窗口
-            TonsoleSpec.run()
+            ConsoleSpec.run()
         }
     }
 }
 
-Object.freeze(TonsoleSpec)
-module.exports = TonsoleSpec
+Object.freeze(ConsoleSpec)
+module.exports = ConsoleSpec
