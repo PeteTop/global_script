@@ -14,6 +14,7 @@ class TonsoleSpec {
             executablePath: chrome, 
             headless: false, //是否打开浏览器窗口
             timeout: 60000,
+            defaultViewport: null,//为每个页面设置一个默认视口大小。默认是 800x600。如果为 null 的话就禁用视图口
             ignoreHTTPSErrors: true ,//如果是访问https页面 此属性会忽略https错误
             args: [
                 //'--window-size=1600,1000'
@@ -24,10 +25,10 @@ class TonsoleSpec {
             cos.forEach(async(item)=>{
                 const page = await browser.newPage() //官网写法： 一打开浏览器会打开两个tab，第二个才是你正在操作的tab
                 //const page = (await browser.pages())[0]; //这是我的写法，只有一个tab
-                await page.setViewport({
-                  width: 1360,
-                  height: 768
-                });
+                // await page.setViewport({
+                //   width: 1360,
+                //   height: 768
+                // });
                 await page.goto(item.url);
                 await page.waitFor('#_e_9');
                 await page.waitFor(2000)
