@@ -39,9 +39,12 @@ class TonsoleSpec {
                     delay: 30
                 })
                 await page.click('#_e_12 > table > tbody > tr:nth-child(2) > td.btn-push-n-center')
+                await page.waitFor(2000)
+                const frame =await page.frames().find(frame => frame.name() === '_e_21');
+                const span = await frame.$('#_e_53 > div > div.toolitem-c > span')
+                if (span) await frame.click('#_e_53 > div > div.toolitem-c > span')
             })
         } catch (error) {
-
             //console.log(error)
             await browser.close(); //关闭窗口
             TonsoleSpec.run()
