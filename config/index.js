@@ -1,4 +1,7 @@
+const sr = require('screenres')
 const config = {
+    screenWidth:sr.get()[0],
+    screenHeight:sr.get()[1],
     taobao:'npm config set registry https://registry.npm.taobao.org && npm config get registry',
     npmjs:'npm config set registry http://registry.npmjs.org && npm config get registry',
     getNpm:'npm config get registry',
