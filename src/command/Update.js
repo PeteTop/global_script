@@ -6,7 +6,7 @@ const {info,error,warn} = require('@hfs/print')
 const os = require('os')
 class UpdateSpec {
     static run(argv) {
-        childProcess.execSync(`${os.type()=== 'Darwin'? 'sudo ' : ''}npm i PeteTop/global_script -g --unsafe-perm=true --allow-root`,{stdio: 'inherit'})
+        childProcess.execSync(`${os.type()=== 'Darwin'? 'sudo ' : ''}npm i PeteTop/global_script -g --unsafe-perm`,{stdio: 'inherit'})
         info([`Update Successful`]) 
         info([`version: ${require('../../package.json').version}`])
         if(os.type()=== 'Darwin')info([`Path:${rootPath}`])

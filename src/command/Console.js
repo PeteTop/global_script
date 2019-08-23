@@ -4,7 +4,7 @@ const path = require('path')
 const os = require('os')
 
 const { 
-    cos,screenWidth,screenHeight
+    cos
 } = require('../../config')
 class TonsoleSpec {
     static async run() {
@@ -25,8 +25,8 @@ class TonsoleSpec {
                 const page = await browser.newPage() //官网写法： 一打开浏览器会打开两个tab，第二个才是你正在操作的tab
                 //const page = (await browser.pages())[0]; //这是我的写法，只有一个tab
                 await page.setViewport({
-                  width: screenWidth,
-                  height: screenHeight
+                  width: 1360,
+                  height: 768
                 });
                 await page.goto(item.url);
                 await page.waitFor('#_e_9');
