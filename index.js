@@ -47,7 +47,7 @@ function start() {
 function fileCreation() {
     if (fs.existsSync(path.resolve(os.homedir(), '.hfs'))) {
         if (!fs.existsSync(path.resolve(os.homedir(), '.hfs/console.json'))) {
-            fs.writeFileSync(path.resolve(os.homedir(), '.hfs/console.json'), JSON.stringify({"git":"https://github.com/"}));
+            fs.writeFileSync(path.resolve(os.homedir(), '.hfs/console.json'), JSON.stringify({"baidu":"https://www.baidu.com/"}));
         } 
     } else {
         fs.mkdirSync(path.resolve(os.homedir(), '.hfs'))
