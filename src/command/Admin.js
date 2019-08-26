@@ -22,8 +22,8 @@ class AdminSpec {
               ]
         });
         try {
-                const page = await browser.newPage() //官网写法： 一打开浏览器会打开两个tab，第二个才是你正在操作的tab
-                //const page = (await browser.pages())[0]; //这是我的写法，只有一个tab
+                //const page = await browser.newPage() //官网写法： 一打开浏览器会打开两个tab，第二个才是你正在操作的tab
+                const page = (await browser.pages())[0]; //这是我的写法，只有一个tab
                 // await page.setViewport({
                 //   width: 1360,
                 //   height: 768
