@@ -18,7 +18,7 @@ class AdminSpec {
             ignoreHTTPSErrors: true ,//如果是访问https页面 此属性会忽略https错误
             args: [
                 //'--window-size=1600,1000'
-                '--start-maximized'//都启动浏览器最大化
+                '--start-maximized'//启动浏览器最大化
               ]
         });
         try {

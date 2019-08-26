@@ -2,10 +2,9 @@ const puppeteer = require('puppeteer-core');
 const chalk = require('chalk')
 const path = require('path')
 const os = require('os')
-
-const { 
+const {
     cos
-} = require('../../config')
+} = require(path.resolve(os.homedir(), '.hfs/account.json'))
 class ConsoleSpec {
     static async run() {
         let chrome = os.type() === 'Darwin'?'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome':'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe'
