@@ -30,7 +30,8 @@ function start() {
         return ele.toLowerCase() === cmd.toLowerCase()
     })
     if (yargs.h) {
-        console.log(specAry)
+        const buffer= fs.readFileSync("./doc/功能介绍.md",'utf-8')
+        console.log(buffer)
     }
     if (specFile) {
         const spec = require(path.resolve(rootPath, 'src/command', specFile))
