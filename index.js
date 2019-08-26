@@ -14,7 +14,7 @@ const fs = require('fs')
 const rootPath = path.resolve(__dirname, './')
 const specFolder = path.resolve(rootPath, 'src/command')
 const os = require('os')
-
+const Introduction = path.resolve(rootPath, 'doc/功能介绍.md')
 start()
 
 function start() {
@@ -30,7 +30,7 @@ function start() {
         return ele.toLowerCase() === cmd.toLowerCase()
     })
     if (yargs.h) {
-        const buffer= fs.readFileSync("./doc/功能介绍.md",'utf-8')
+        const buffer= fs.readFileSync(Introduction,'utf-8')
         console.log(buffer)
     }
     if (specFile) {
