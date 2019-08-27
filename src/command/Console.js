@@ -46,9 +46,9 @@ class ConsoleSpec {
                 }
             })
         } catch (error) {
-            //console.log(error)
+            console.log(error)
             await browser.close(); //关闭窗口
-            ConsoleSpec.run()
+            //ConsoleSpec.run()
         }
     }
 }

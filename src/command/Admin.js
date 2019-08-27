@@ -39,9 +39,9 @@ class AdminSpec {
                 })
                 await page.click('#_e_12 > table > tbody > tr:nth-child(2) > td.btn-push-n-center')
         } catch (error) {
-            //console.log(error)
+            console.log(error)
             await browser.close(); //关闭窗口
-            AdminSpec.run()
+            //AdminSpec.run()
         }
     }
 }
