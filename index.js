@@ -26,7 +26,7 @@ function start() {
     if (!cmd) {
         cmd = 'Info'
     }
-    const specFile = specAry.find(ele => {
+    const specFile = specAry.find(ele => { //find() 方法返回数组中满足提供的测试函数的第一个元素的值。否则返回 undefined。
         return ele.toLowerCase() === cmd.toLowerCase()
     })
     if (yargs.h) {
