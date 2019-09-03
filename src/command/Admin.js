@@ -26,7 +26,7 @@ class AdminSpec {
             ]
         });
         try {
-            for (let item of cos) {
+            for (let item of remoteServices) {
                 //const pages = await browser.pages(); // get all open pages by the browser
                 //const page = pages[pages.length - 1]; // the popup should be the last page opened  
                 const page = await browser.newPage() //官网写法： 一打开浏览器会打开两个tab，第二个才是你正在操作的tab
