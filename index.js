@@ -32,7 +32,7 @@ function start() {
     })
     if (yargs.h) {
         const buffer= fs.readFileSync(Introduction,'utf-8')
-        console.log(chalk.bold.green(buffer))
+        console.log(chalk.green(buffer))
     }
     if (specFile) {
         const spec = require(path.resolve(rootPath, 'src/command', specFile))
