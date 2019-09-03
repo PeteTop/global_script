@@ -6,7 +6,19 @@ const config = {
             url:'https://129.211.10.130/',
             name:'admin',
             pwd:'adminadmin'
-    }
+    },
+    "cos":[
+        {
+            "url":"https://129.211.10.130/",
+            "name":"admin",
+            "pwd":"adminadmin"
+        },
+        {
+            "url":"https://129.211.10.130/",
+            "name":"admin",
+            "pwd":"adminadmin"
+        }
+    ]
 }
 Object.freeze(config)
 module.exports = config
