@@ -6,6 +6,7 @@ const {
     error,
     warn
 } = require('@hfs/print')
+const chalk = require('chalk')
 const {
     _: argvAry
 } = yargs
@@ -31,7 +32,7 @@ function start() {
     })
     if (yargs.h) {
         const buffer= fs.readFileSync(Introduction,'utf-8')
-        console.log(buffer)
+        console.log(chalk.bold.green(buffer))
     }
     if (specFile) {
         const spec = require(path.resolve(rootPath, 'src/command', specFile))
