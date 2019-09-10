@@ -11,7 +11,7 @@ class TXSpec {
         const browser = await puppeteer.launch({
             ///Users/admin/Downloads/Chrome/chrome-mac/chrome-mac/Chromium.app/Contents/MacOS/Chromium
             executablePath: chrome, 
-            headless: true, //是否打开浏览器窗口
+            headless: false, //是否打开浏览器窗口
             timeout: 60000,
             ignoreHTTPSErrors: true //如果是访问https页面 此属性会忽略https错误
         });

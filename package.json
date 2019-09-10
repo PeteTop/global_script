@@ -1,6 +1,6 @@
 {
   "name": "@hfs/global_script",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -21,8 +21,13 @@
     "puppeteer-core": "^1.19.0",
     "qs": "^6.8.0",
     "request": "^2.88.0",
+    "shebang-loader": "0.0.1",
     "socks": "^2.3.2",
     "socks5-http-client": "^1.0.4",
     "yargs": "^13.2.4"
+  },
+  "devDependencies": {
+    "coffeescript": "^1.1.1",
+    "webpack": "^4.39.3"
   }
 }
