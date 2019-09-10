@@ -18,29 +18,34 @@ const {
 class FySpec {
       static async run(argv) {
         argv._.shift()
-        const appid = '20190904000331954';
-        const key = '5qhRWKKOaEhVvSPE9V8w';
-        const salt = (new Date).getTime();
-        const query =argv._.join(' ');
-        //判断字符串是否含有中文 ,方式2:escape(str).indexOf("%u")
-        //escape对字符串进行编码，字符值大于 255 的以 %u**** 格式存储，而字符值大于 255 的恰好是非英文字符（一般是中文字符，非中文字符也可以当作中文字符考虑）
-        const isChinese = /.*[\u4e00-\u9fa5]+.*/.test(query)
-        //多个query可以用\n连接  如 query='apple\norange\nbanana\npear'
-        const from = 'auto';
-        const to = isChinese ? 'en':'zh';
-        const str1 = appid + query + salt +key;
-        const sign = FySpec.MD5(str1);
-        const option = {
-            q: query,
-            appid: appid,
-            salt: salt,
-            from: from,
-            to: to,
-            sign: sign
+        if (argv._.length) {
+            const appid = '20190904000331954';
+            const key = '5qhRWKKOaEhVvSPE9V8w';
+            const salt = (new Date).getTime();
+            const query =argv._.join(' ');
+            
+            //判断字符串是否含有中文 ,方式2:escape(str).indexOf("%u")
+            //escape对字符串进行编码，字符值大于 255 的以 %u**** 格式存储，而字符值大于 255 的恰好是非英文字符（一般是中文字符，非中文字符也可以当作中文字符考虑）
+            const isChinese = /.*[\u4e00-\u9fa5]+.*/.test(query)
+            //多个query可以用\n连接  如 query='apple\norange\nbanana\npear'
+            const from = 'auto';
+            const to = isChinese ? 'en':'zh';
+            const str1 = appid + query + salt +key;
+            const sign = FySpec.MD5(str1);
+            const option = {
+                q: query,
+                appid: appid,
+                salt: salt,
+                from: from,
+                to: to,
+                sign: sign
+            }
+             const data = await get(option)
+            console.log(chalk.green(data.trans_result[0].dst))
+            //info([data.trans_result[0].dst])
+        }else {
+            console.log(chalk.red('请输入翻译内容例如: hfs fy hello world 输出: 你好 世界 '))
         }
-         const data = await get(option)
-        console.log(chalk.green(data.trans_result[0].dst))
-        //info([data.trans_result[0].dst])
     }
     static MD5(string) {
         function RotateLeft(lValue, iShiftBits) {
