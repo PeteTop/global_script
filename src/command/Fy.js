@@ -11,14 +11,11 @@ const {
     error,
     warn
 } = require('@hfs/print')
-const {
-    version
-} = packageJson
-
 class FySpec {
       static async run(argv) {
         argv._.shift()
         if (argv._.length) {
+            const url = 'http://api.fanyi.baidu.com/api/trans/vip/translate'
             const appid = '20190904000331954';
             const key = '5qhRWKKOaEhVvSPE9V8w';
             const salt = (new Date).getTime();
@@ -40,7 +37,7 @@ class FySpec {
                 to: to,
                 sign: sign
             }
-             const data = await get(option)
+             const data = await get(url,option)
             console.log(chalk.green(data.trans_result[0].dst))
             //info([data.trans_result[0].dst])
         }else {
