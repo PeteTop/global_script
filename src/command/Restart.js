@@ -5,14 +5,17 @@ const os = require('os')
 const {
     cons
 } = require(path.resolve(os.homedir(), '.hfs/console.json'))
+const {
+    remoteServices
+} = require(path.resolve(os.homedir(), '.hfs/account.json'))
 const cmd = 'jps'
 class RestartSpec {
     static run(argv) {
         ssh.connect({
-            host: argv.ip,
+            host: argv.ip || '129.211.10.130',
             username: 'root',
             port: 22,
-            password: argv.pwd  
+            password: argv.pwd || remoteServices.admins.pwd1 
         }).then(async () => {
             let ary = (await RestartSpec.startCmd(cmd)).split('\n')
             ary.forEach(element => {
