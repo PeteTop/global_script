@@ -9,9 +9,9 @@ const os = require('os')
 const Update = require('./Update')
 class GitSpec {
     static run(argv) {
-        let cmd = `${os.hostname()} ${new Date().toLocaleString()}` 
-        console.log(argv.m||cmd)
-        childProcess.execSync(`git add . && git commit -m 'pan-PC' && git push`, {
+        // ${new Date().toLocaleString()}
+        let cmd = `${os.hostname()}` 
+        childProcess.execSync(`git add . && git commit -m '${argv.m||cmd}' && git push`, {
             encoding: 'utf-8',
             stdio: 'inherit'
         })
