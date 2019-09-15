@@ -11,7 +11,7 @@ class GitSpec {
     static run(argv) {
         let cmd = `${os.hostname()} ${new Date().toLocaleString()}` 
         console.log(argv.m||cmd)
-        childProcess.execSync(`git add . && git commit -m '222' && git push`, {
+        childProcess.execSync(`git add . && git commit -m 'pan-PC' && git push`, {
             encoding: 'utf-8',
             stdio: 'inherit'
         })
