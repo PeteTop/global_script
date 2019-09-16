@@ -21,5 +21,6 @@ class GitSpec {
         }
     }
 }
+
 Object.freeze(GitSpec)
 module.exports = GitSpec
