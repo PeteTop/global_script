@@ -1,12 +1,13 @@
 const childProcess = require('child_process')
 const path = require('path')
 const rootPath = path.resolve(__dirname, '../../')
+const printPath = path.resolve(rootPath,'config/Print.js')
 const os = require('os')
 const {
     info,
     error,
     warn
-} = require('@hfs/print')
+} = require(printPath)
 const cons = require(path.resolve(os.homedir(), '.hfs/console.json'))
 
 class OpenSpec {
