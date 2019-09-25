@@ -6,11 +6,6 @@ const os = require('os')
 const {
    get, post
 } = require('../../config/ax')
-const {
-    info,
-    error,
-    warn
-} = require('@hfs/print')
 class FySpec {
       static async run(argv) {
         argv._.shift()
@@ -39,7 +34,6 @@ class FySpec {
             }
              const data = await get(url,option)
             console.log(chalk.green(data.trans_result[0].dst))
-            //info([data.trans_result[0].dst])
         }else {
             console.log(chalk.red('请输入翻译内容例如: hfs fy hello world 输出: 你好 世界 '))
         }

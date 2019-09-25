@@ -1,5 +1,6 @@
 const childProcess = require('child_process')
 const chalk = require('chalk')
+const path = require('path')
 const rootPath = path.resolve(__dirname, '../../')
 const printPath = path.resolve(rootPath,'config/Print.js')
 const {

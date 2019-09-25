@@ -5,7 +5,7 @@ const {
     info,
     error,
     warn
-} = require('@hfs/print')
+} = require('./config/Print')
 const chalk = require('chalk')
 const {
     _: argvAry
