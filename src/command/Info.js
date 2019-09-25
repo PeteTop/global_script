@@ -16,7 +16,7 @@ class InfoSpec {
     static run(argv) {
             info([`Operating system: ${os.type() === 'Darwin' ? 'macOS' : 'Windows'}`])
             info([`version: ${version}`])
-            if(os.type() === 'Darwin')info([`Path:${rootPath}`])
+            info([`Path:${rootPath}`])
     }
 }
 

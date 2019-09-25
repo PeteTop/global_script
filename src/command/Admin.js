@@ -15,7 +15,7 @@ class AdminSpec {
         const select = Object.keys(argv)[1]
         let RemoteAry = []
         for (let i of argv._) {
-            if (remoteServices[i])RemoteAry.push(remoteServices[i])
+            if (remoteServices[i])RemoteAry.push(remoteServices[i]) 
         }
         let chrome = os.type() === 'Darwin' ? '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' : 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe'
         try {
