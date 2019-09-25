@@ -11,7 +11,7 @@ class GitSpec {
     static run(argv) {
         // ${new Date().toLocaleString()}
         let cmd = `${os.hostname()}` 
-        childProcess.execSync(`git add . && git commit -m '${argv.m||cmd}' && git push`, {
+        childProcess.execSync(`git add . && git commit -m ${argv.m||cmd} && git push`, {
             encoding: 'utf-8',
             stdio: 'inherit'
         })
@@ -22,5 +22,6 @@ class GitSpec {
         
     }
 }
+
 Object.freeze(GitSpec)
 module.exports = GitSpec
