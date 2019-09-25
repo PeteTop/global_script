@@ -1,10 +1,12 @@
 const childProcess = require('child_process')
 const chalk = require('chalk')
+const rootPath = path.resolve(__dirname, '../../')
+const printPath = path.resolve(rootPath,'config/Print.js')
 const {
     info,
     error,
     warn
-} = require('@hfs/print')
+} = require(printPath)
 const os = require('os')
 const Update = require('./Update')
 class GitSpec {
