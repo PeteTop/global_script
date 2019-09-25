@@ -19,6 +19,7 @@ class GitSpec {
         if (argv.update) {
             Update.run()
         }
+        
     }
 }
 Object.freeze(GitSpec)
